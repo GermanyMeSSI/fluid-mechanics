@@ -1,0 +1,247 @@
+\documentclass{beamer}
+
+%
+% Choose how your presentation looks.
+%
+% For more themes, color themes and font themes, see:
+% http://deic.uab.es/~iblanes/beamer_gallery/index_by_theme.html
+%
+\mode<presentation>
+{
+  \usetheme{Warsaw}      % or try Darmstadt, Madrid, Warsaw, ...
+  \usecolortheme{default} % or try albatross, beaver, crane, ...
+  \usefonttheme{professionalfonts}  % or try serif, structurebold, ...
+  \setbeamertemplate{navigation symbols}{}
+  \setbeamertemplate{caption}[numbered]
+} 
+
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{ctex}
+% On writeLaTeX, these lines give you sharper preview images.
+% You might want to comment them out before you export, though.
+\usepackage{pgfpages}
+\pgfpagesuselayout{resize to}[%
+  physical paper width=8in, physical paper height=6in]
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,    % 链接着色（true：彩色文本；false：边框）
+    linkcolor=blue,     % 内部链接颜色（如公式、章节引用）
+    urlcolor=cyan       % 网址颜色
+}
+\newcommand{\p}{\partial}
+
+
+\title{对弱导数的几点思考}
+\author{力学爱好者}
+\institute{XJTU}
+\date{2025/9/13}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+
+\begin{frame}
+   
+   
+  $L^p=\mathcal{L}^p/\sim$
+
+when we talk about a funtion $u\in L_{loc}^1(\Omega)$ which has a $ith$ weak derivative $g$ also 
+in $ L_{loc}^1(\Omega)$, we wrte
+\begin{equation*}
+    g=\frac{\partial u}{\partial x_i}
+\end{equation*}
+
+Note that since $g$ is unique, we can write $\frac{\partial u}{\partial x_i}$ without ambiguity.
+
+Then we have  a operator
+
+\begin{equation*}
+    \partial_i :  W^{1,p} \to L^p
+\end{equation*}
+
+actually ,we can see that there is a mapping
+
+\begin{equation*}
+    \partial_i: \mathbb{W}^{1,p} \to L^p
+\end{equation*}
+
+The latter descends to the former operator, and we used the same notation
+
+\end{frame}
+
+\begin{frame}
+    
+Thus for $[u] \in W^{1, p}$, we define $\partial_i [u] :=\partial_i u $ 
+ you should check ion is well defined which means doesnot depend On 
+ the representative $u$ !
+
+Then we can dm the linearity of the latter operator !
+
+Hence for $u\in W^{1, p}$, let's say $u=[v]$, hence $u^+=[v^+], u^-=[v^-]$, and 
+\begin{equation*}
+    \p_iu=\p_i(u^+-u^-)=\p_iv+\p_iv1_{v=0}=\p_iv \quad \in L^p
+\end{equation*}
+
+hence
+\begin{equation*}
+    \p_iv=0 \quad\text{almost everywhere on} \left\{x\in \Omega: v(x)=0\right\}
+\end{equation*}
+
+{\small
+
+
+ you should check that this definition is well defined which means doesnot depend On 
+ th
+
+
+
+
+
+}
+
+\end{frame}
+
+
+\begin{frame}
+  Speaking of complex number $\mathbb{C}$, the precise definition is as follows
+  \begin{definition}
+    Complex number is a set denoted by $\mathbb{C}$ whose elements are ordered pairs
+\begin{equation*}
+  \mathbb{C}:=\left\{[a, b]:a, b \in \mathbb{R}   \right\}
+\end{equation*}
+With the convention that $[a,b]=[c,d]$ iff $a=c, b=d$.
+  \end{definition}
+Then we define the following addition and mulptication operation to make $\mathbb{C}$ become
+a field.
+\begin{equation*}
+  [a,b]+[c,d]=[a+c,b+d]; [a,b]\times[c,d]=[ad-bc, ac+bd]
+\end{equation*}
+
+Then we define $i$ denoting the elemtent $[0, 1]$, it is clear that 
+$[0,0]$ and $[1,0]$ are the zero element and unity element in the field.
+
+
+\end{frame}
+\begin{frame}
+  There is a natural injection $\mathbb{J}$ between $\mathbb{R} \to \mathbb{C} $
+  \begin{equation*}
+    J: \mathbb{R}\to \mathbb{C} \quad r\mapsto[r, 0]
+  \end{equation*}
+Using $J$, we can think of $\mathbb{R}$ as a subset of $\mathbb{C}$, to be precise, when 
+we talk about $a\in \mathbb{R}$ as an element in $\mathbb{C}$, we infer the unique element 
+$J(a)$!!!!!
+
+Also remember $i=[0,1]$, we have $[a,b]=[a,0]+[0,b]=J(a)+iJ(b)$, we now make
+ the convention that $a_\mathbb{C}$=$J(a)$, then 
+we write the former expression as $[a,b]=a_\mathbb{C}+b_\mathbb{C}i$
+
+
+
+\end{frame}
+
+\begin{frame}
+  
+Let T be an operator defind on $L^p$, with range in$\mathbf{M}(\mu)/\sim$.
+  
+Then we define $T\circ u$ where $u\in L^q(0,T;L^p)$ as 
+\begin{equation*}
+  Tu=T\tilde{u}, \quad [\tilde{u}]=u;
+\end{equation*}
+
+Then we can use the axiom of choice to define the following function
+\begin{equation*}
+  v(t,\bullet)=<Tu(t)>
+\end{equation*}
+
+Generating a funtion in $M((0,T)\times\Omega)$  $<<v(t,x)>>$
+
+If $T\tilde{u}$ is $\p_i$, then for $v$, we have the following characteriaztion
+{\small
+
+\begin{equation*}
+  \int_{\Omega}v(t,x)\phi(x)dx=\int_{\Omega}<\tilde{u}(t)>\p_i\phi(x)dx,\quad \text{for any $t\in (0,T), \phi \in \mathbf{D}(\Omega)$}
+\end{equation*}
+}
+
+We donot distinguish the case when $\mathbb{M}$ and 
+$\mathbf{L}^q$ have different underlying domain.
+
+
+\end{frame}
+
+\begin{frame}
+  Deadkind 分割. 再仔细想一下,  首先我们约定$[a,b]$, 其中$a\in X, b\in Y$ 中的相等, 此时
+  再定义笛卡尔乘积为遍历$a\in X$和$b\in Y$
+
+你他妈的如果再这样废话的话,真的有点欠锤了哈,我说实话,  真的得考虑拿个macbook出去了
+
+
+
+
+\end{frame}
+
+\begin{frame}
+  
+Let $q\in (1,\infty]$, there is a 
+countable dense subset $( \{v_j\} \subset C_c(\mathbb{R}^n) )$
+in the separable space $L^{q'} (\mathbb{R}^n)$. If $f\in L^r(\mathbb{R}^n)$ where
+$1< r < q$
+and $g\in L^q(\mathbb{R}^n)$ satisfies the following
+\begin{equation*}
+  \int_{\mathbb{R}^n}f v_j = \int_{\mathbb{R}^n}g v_j \quad \text{for all $j$}
+\end{equation*}
+
+Then whether $f=g$ a.e.?
+
+\end{frame}
+
+
+\begin{frame}
+  
+Consider two $\sigma$-finite measure space $(X, A, \mu)$, $(Y, B, \nu)$
+For the completion of two space$(X\times Y, (A\otimes B)^{*}, (\mu \otimes \nu)^*)$
+. There is a simple observation that for any nonnegative function $f:X\times Y\to [0, +\infty]$
+we have if there is a measurable set $X_0\in A$ such that $f_x$ is measurable for all $x\in X_0$
+Then the function defined by
+\begin{equation*}
+  \phi_x=\int_{Y}f(x,y)d\nu
+\end{equation*}
+is measurable on $X_0$
+\begin{proof}
+  Note that there exists a funtion $g:X\times Y\to [0, +\infty]$ which is $A\otimes B$ measurable
+  such that for almost all $x$, $f(x, \cdot)=g(x, \cdot)$ a.e. on $Y$.
+\end{proof}
+ Thus there is null set $N$ contained in $X_0$ such 
+ that $\phi_x=\int_{Y}g(x,y)d\nu$ on $X_0\setminus N$
+
+\end{frame}
+
+\begin{frame}
+  When we have two Banach space $X$ and $Y$, where $X\hookrightarrow Y$, then the notation $L^p(0,T; X) \hookrightarrow L^p(0,T; Y)$
+is a little absurbing, as we know in general $X\neq Y$, hence the eqivalence class may arise an issue!
+
+The correct understaning is that we use the following inclusion mapping $i$, and define the mapping 
+\begin{align*}
+    \tilde{i}: L^p(0,T; X) & \to L^p(0,T; Y) \\
+    [u]_{\scriptscriptstyle X} & \mapsto [iu]_{\scriptscriptstyle Y}
+\end{align*}
+
+
+
+To simplify our notation, we often ignore the subscript and the inclusion mapping $i$, just write $L^p(0,T; X) \hookrightarrow L^p(0,T; Y)$
+or $L^p(0,T; X) \subset L^p(0,T; Y)$ even more. But we should know that this is unserious!!
+But it is always harmless as we donot change the heart of this idea or this property!
+
+\end{frame}
+
+
+
+
+
+
+\end{document}

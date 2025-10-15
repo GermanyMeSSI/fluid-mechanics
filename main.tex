@@ -1,0 +1,159 @@
+% Hello! Here s how this works:
+%
+% You edit the source code here on the left, and the preview on the
+% right shows you the result within a few seconds.
+%
+% Bookmark this page and share the URL with your co-authors. They
+% can edit at the same time!
+%
+% You can upload figures, bibliographies, custom classes and
+% styles using the files menu.
+%
+% This presentation is made with the Beamer package. For tutorials
+% and more info, see:
+% http://en.wikipedia.org/wiki/Beamer_(LaTeX)
+%
+% We$re still in beta. Please leave some feedback using the link at
+% the top left of this page.
+%
+% Enjoy!
+%
+\documentclass{beamer}
+
+%
+% Choose how your presentation looks.
+%
+% For more themes, color themes and font themes, see:
+% http://deic.uab.es/~iblanes/beamer_gallery/index_by_theme.html
+%
+\mode<presentation>
+{
+  \usetheme{Warsaw}      % or try Darmstadt, Madrid, Warsaw, ...
+  \usecolortheme{default} % or try albatross, beaver, crane, ...
+  \usefonttheme{professionalfonts}  % or try serif, structurebold, ...
+  \setbeamertemplate{navigation symbols}{}
+  \setbeamertemplate{caption}[numbered]
+} 
+
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{ctex}
+% On writeLaTeX, these lines give you sharper preview images.
+% You might want to comment them out before you export, though.
+\usepackage{pgfpages}
+\pgfpagesuselayout{resize to}[%
+  physical paper width=8in, physical paper height=6in]
+
+\title{转博面试个人陈述}
+\author{张磊}
+\institute{西安交通大学数学学院}
+\date{2025/5/9}
+
+\begin{document}
+
+
+
+% Uncomment these lines for an automatically generated outline.
+%\begin{frame}{Outline}
+%  \tableofcontents
+%\end{frame}
+
+\section{个人简述}
+\subsection{基本信息}
+
+\begin{frame}
+姓名：张磊
+
+研究方向：非线性泛函分析及其应用
+
+指导教师：尤波
+
+专业课成绩：
+\begin{tabular}{|l|l|}
+
+\hline 课程 & 成绩 \\
+\hline 非线性分析 & 97\\
+\hline  黎曼几何 & 100  \\
+\hline 凸分析 & 94 \\
+\hline 广义函数与 Sobolev 空间 & 优 \\
+\hline 椭圆与抛物方程 & 良 \\
+\hline Modern Functional Analysis & 优   \\
+\hline 偏微分方程正则性理论 & 良  \\
+\hline Carleman 估计以及应用 & 优 \\
+\hline Stochastic Differential Equation with Application & 良 \\
+\hline
+\end{tabular}
+
+\end{frame}
+
+\begin{frame}
+    Regularazation technique and bootstrap argument to prove the wellposedness
+    of the following 3D MHD Equation
+
+    Riemannian integral can be thought of a net convergence
+
+    \begin{definition}
+        A net is a function from a directed set (D, $\leq$) to a topological space
+        X.
+    \end{definition}
+    \begin{equation}
+        \int_{a}^{b}f(x)dx
+    \end{equation}
+
+
+\end{frame}
+
+
+\subsection{硕士经历}
+
+\begin{frame}
+
+学术讲习班：
+\begin{tabular}{|c|c|}
+\hline 无穷维动力系统天元数学讲习班 & 南京大学\\
+\hline \multicolumn{2}{|c|}{Strichartz估计及应用，随机发展方程，正不变吸引子} \\
+\hline 分数Brown运动与随机动力系统专题讲习班 & 华南理工大学  \\
+\hline \multicolumn{2}{|c|}{分数阶Brown运动，随机吸引子，随机偏微分方程} \\
+\hline 第二十届西部高校数学教师暑期学校 & 四川大学\\
+\hline \multicolumn{2}{|c|}{高等概率论，随机分析，随机偏微分方程} \\
+\hline
+\end{tabular}
+
+协办学术会议：
+\begin{tabular}{|c|c|} 
+\hline 2023年非线性分析与偏微分方程学术会议 & 西安交通大学 \\
+\hline \multicolumn{2}{|c|}{变分法，偏微分方程，无穷维动力系统 }\\
+\hline
+\end{tabular}
+
+\end{frame}
+
+
+\subsection{科研经历}
+
+\begin{frame}
+考虑如下的全空间磁流体MHD方程
+
+
+试图证明如下定理
+
+
+
+\begin{theorem}
+    假设 $(v, B) \in L_{\text {loc }, \sigma}^{2}\left(\mathbb{R}^{3} \times[0, T)\right) $ 为MHD方程在  $\left.\mathbb{R}^{3} \times[0, T)\right) $ 
+的相对弱解 ，初值  $\left(v_{0}, B_{0}\right) \in L_{\sigma}^{2}\left(\mathbb{R}^{3}\right)$ .若对任意的  $h>0$,$(v, B) $ 满足如下约束
+\begin{equation*}
+v, B \in L^{p}(h, T ; L^{q}(\mathbb{R}^{3})), \quad \frac{2}{p}+\frac{3}{q}=1, \quad q \in(3, \infty).
+\end{equation*}
+
+
+以及 $ (v, B) \longrightarrow^w\left(v_{0}, B_{0}\right) \in  L^{2}\left(\mathbb{R}^{3}\right)$ .则 $(v, B)$  是一个 Leray-Hopf 弱解. 
+
+\end{theorem}
+\end{frame}
+
+
+
+
+ 
+\end{document}

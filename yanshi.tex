@@ -1,0 +1,204 @@
+\documentclass{beamer}
+
+%
+% Choose how your presentation looks.
+%
+% For more themes, color themes and font themes, see:
+% http://deic.uab.es/~iblanes/beamer_gallery/index_by_theme.html
+%
+\mode<presentation>
+{
+  \usetheme{Warsaw}      % or try Darmstadt, Madrid, Warsaw, ...
+  \usecolortheme{default} % or try albatross, beaver, crane, ...
+  \usefonttheme{professionalfonts}  % or try serif, structurebold, ...
+  \setbeamertemplate{navigation symbols}{}
+  \setbeamertemplate{caption}[numbered]
+} 
+
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{ctex}
+% On writeLaTeX, these lines give you sharper preview images.
+% You might want to comment them out before you export, though.
+\usepackage{pgfpages}
+\pgfpagesuselayout{resize to}[%
+  physical paper width=8in, physical paper height=6in]
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,    % 链接着色（true：彩色文本；false：边框）
+    linkcolor=blue,     % 内部链接颜色（如公式、章节引用）
+    urlcolor=cyan       % 网址颜色
+}
+
+\title{A lemma to improve weak continuity
+(提升弱连续性的一个引理)}
+\author{力学爱好者}
+\institute{XJTU}
+\date{2025/9/1}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+
+
+
+
+\begin{frame}
+
+\begin{definition}
+    Let $Y$ be a real Banach space, we say that a function $u:[a, b] \rightarrow Y$
+    is weakly continuous if $u$ is continuous from  $[a, b]$ to $(Y, \tau_{weak})$ which is equivalent 
+    with for all  $\psi \in Y^{\prime}$ , the function defined by  $t \in[0, T] \mapsto \langle\psi, u(t)\rangle_{Y^{\prime}, Y} \in \mathbb{R}$  is continuous.
+    
+    We denote all functions that are weakly continuous as $\mathcal{C}\left([0, T], Y_{\text {weak }}\right)$.
+\end{definition}
+
+
+
+ Note that like the strong continuity functions, an element $u \in \mathcal{C}\left([0, T], Y_{\text {weak }}\right)$
+    is uniquely determined(i.e. If we have two elements $u, v \in \mathcal{C}\left([0, T], Y_{\text {weak }}\right)$ such that $u=v$
+    almost everywhere, then $u=v$ on $[0, T]$)
+    
+
+
+    \begin{lemma}
+        Let X, Y be Banach spaces, where X is reflexive. If there is an embedding (continuous linear injection)
+        $J:X\rightarrow Y$, 
+        then we have
+        \begin{equation*}
+            L^{\infty}(]0,T[,X) \cap \mathcal{C}\left([0, T], Y_{\text {weak }}\right)
+       \subset     
+\mathcal{C}\left([0, T], X_{\text {weak }}\right)
+        \end{equation*}
+    \end{lemma}
+
+
+
+\end{frame}
+
+\begin{frame}
+    
+ Note that when we say that X is continuously embedded in Y, we do not assume that X is a linear
+ subspace of Y (consider the natural embedding $i:L^2 \rightarrow H^{-1}$)
+
+When we say an elment $u\in  L^{\infty}(]0,T[,X) \cap \mathcal{C}\left([0, T], Y_{\text {weak }}\right)$
+the correct understanding is that we have an element $v(t) \in C([0,T],Y_{weak})$ and an element $u(t)\in L^{\infty}(]0,T[,X)$
+such that $Ju=v$ almost everywhere.
+
+
+ 
+
+\end{frame}
+
+
+
+\begin{frame}
+  
+ We claim that there exists an element $\tilde{u}: \mathbb{R}\rightarrow X$ such that $J\tilde{u}=v$ on $[0, T]$
+and there exists $M> 0$ such that $\|\tilde{u}(t)\|\leq M$ on $\mathbb{R}$
+
+First, let us extend  $u$ and $v$ to all of  $\mathbb{R}$  (e.g., by successive reflections performed
+ by setting  $u(t)=u(-t)$  for  $t \in[-T, 0]$ , etc.). It is then obvious that  
+$u \in L^{\infty}(\mathbb{R}, X) $ and 
+$v\in \mathcal{C}\left(\mathbb{R}, Y_{\text {weak }}\right)$, $Ju=v$ almost everywhere on $\mathbb{R}$. Let  $\eta: \mathbb{R} \rightarrow \mathbb{R}$  be a mollifying kernel. We set  $u_{n}=u \star \eta_{1 / n}$  which is defined for all  $t$  and takes its values in  $X$ .
+
+Let  $t_{0} \in \mathbb{R}$  be fixed. For all  $n \geq 1$ , we have
+\begin{equation*}
+  \left\|u_{n}\left(t_{0}\right)\right\|_{X}=\left\|\left(u \star \eta_{1 / n}\right)\left(t_{0}\right)\right\|_{X} \leq\|u\|_{L^{\infty}(\mathbb{R}, X)}
+\end{equation*}
+
+Then by the reflexivity of $X$, we can extract a subsequence of $u_n(t_0)$ which  converges
+weakly to some $\tilde{u}(t_0) \in X$. 
+
+
+
+\end{frame}
+
+
+\begin{frame}
+  Then note that we also have $Ju_n(t)$ weakly converges to $v(t)$, $\forall t\in\mathbb{R}$. Indeed, let $\psi \in Y'$, we have
+ 
+    {\tiny
+
+     \begin{equation*}
+        \begin{aligned}
+<\psi,\left(Ju \star \eta_{1 / n}\right)\left(t_{0}\right)-V\left(t_{0}\right)>_{Y^{\prime}, Y} & =\left(<\psi, v>_{Y^{\prime}, Y} \star \eta_{1 / n}\right)\left(t_{0}\right)-\langle\psi, v\rangle_{Y^{\prime}, Y}\left(t_{0}\right) \\
+& \xrightarrow[n \rightarrow \infty]{ } 0,
+\end{aligned}
+  \end{equation*}
+
+    
+    }
+
+where we used the weak continuity of $v$.
+
+Since $J$ is an embedding, then we have $J\tilde{u}(t)=v(t)$ on $\mathbb{R}$, also using the weak lower semicontinuity
+of the norm, we have that there exists $M> 0$ such that $\|\tilde{u}(t)\|\leq M$ on $[0, T]$.
+
+
+\end{frame}
+
+\begin{frame}
+  To prove the weak continuity of $\tilde{u}$, let $\phi \in X'$, by Hahn-Banach Theorem, we have an extension
+  $\psi \in Y'$ of $\phi \in X'$, then as $t_n \xrightarrow[n \rightarrow \infty]{} t$ we have 
+  {\small
+   \begin{equation*}
+    |<\phi, \tilde{u}(t_n)>-<\phi, \tilde{u}(t)>|=|<\psi, v(t_n)>-<\psi, v(t)>|\xrightarrow[n \rightarrow \infty]{}0
+  \end{equation*}
+    }
+ 
+
+    Thus the conclusion follows.
+\end{frame}
+
+
+\begin{frame}
+  
+商空间的定义
+
+\begin{definition}
+  设$X$是一个Banach空间, $Y$是$X$的闭子空间, 定义$X/Y:=\{[x]:x\in X\}$
+\end{definition}
+
+
+{ \small  \begin{equation}
+  P=\left\{\begin{array}{l|l}
+h: D(h) \subset E \rightarrow \mathbb{R} & \begin{array}{l}
+D(h) \text { is a linear subspace of } E, \\
+h \text { is linear, } G \subset D(h), \\
+h \text { extends } g, \text { and } h(x) \leq p(x) \quad \forall x \in D(h)
+\end{array}
+\end{array}\right\} .
+\end{equation}
+}
+
+
+\end{frame}
+
+
+\begin{frame}
+  牛顿第二定律可以表示为：
+\begin{equation}
+    F = ma \label{eq:newton}
+\end{equation}
+
+% 多行公式（align环境）
+相对论中的能量和动量关系：
+\begin{align}
+    E &= mc^2 \label{eq:energy} \\
+    p &= mv \label{eq:momentum}
+\end{align}
+
+% 引用公式
+如公式 \ref{eq:newton} 所示，力等于质量乘以加速度。
+结合公式 \eqref{eq:energy} 和 \eqref{eq:momentum} 可以推导出更多结论。
+  
+
+\end{frame}
+
+
+\end{document}
